@@ -34,9 +34,21 @@ class ToastNotification {
     getHtml() {
 
         return `
-			<div class="toastNotification">
+			<div class="toastNotification notification_success">
 
+				<div class="notification_icon">
+					<ion-icon name="bicycle"></ion-icon>
+				</div>
 
+				<div class="notification_text">
+					<p class="text_title">Workout Completed!</p>
+					<p class="text_message">You have Successfully completed your workout, congrats! Keep up the good work!</p>
+					<p class="text_time">5 minutes ago</p>
+				</div>
+
+				<div class="notification_close">
+					<ion-icon name="close" onclick="this.closest('.toastNotification').remove()"></ion-icon>
+				</div>
 
 			</div>
         `;
