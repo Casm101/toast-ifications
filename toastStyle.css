@@ -1,0 +1,77 @@
+.toastNotification {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  border-left: 5px #d9eed9 solid;
+  background: white;
+  color: black;
+  width: 425px;
+  height: auto;
+  border-radius: 0.25rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.toastNotification .notification_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d9eed9;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 25px;
+}
+.toastNotification .notification_icon ion-icon {
+  font-size: 1.5rem;
+  color: #208625;
+}
+.toastNotification .notification_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+}
+.toastNotification .notification_text .text_title {
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+.toastNotification .notification_text .text_message {
+  font-size: 0.9rem;
+  margin: 0;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.toastNotification .notification_text .text_time {
+  font-size: 0.75rem;
+  color: grey;
+  margin: 0.25rem 0 0 0;
+}
+.toastNotification .notification_close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e7e7e7;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 25px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+.toastNotification .notification_close ion-icon {
+  font-size: 1.5rem;
+  color: lightgrey;
+}
+.toastNotification .notification_close:hover {
+  opacity: 0.8;
+}
+.toastNotification:hover .text_message {
+  white-space: normal;
+}
+
+/*# sourceMappingURL=toastStyle.css.map */
