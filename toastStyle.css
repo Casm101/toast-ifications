@@ -5,7 +5,7 @@
   gap: 1rem;
   padding: 1rem;
   margin: 1rem;
-  border-left: 5px #d9eed9 solid;
+  border-left: 5px grey solid;
   background: white;
   color: black;
   width: 425px;
@@ -15,18 +15,54 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.toastNotification.notification_success {
+  border-left-color: #d9eed9;
+}
+.toastNotification.notification_success .notification_icon {
+  background: #d9eed9;
+}
+.toastNotification.notification_success .notification_icon ion-icon {
+  color: #208625;
+}
+.toastNotification.notification_warning {
+  border-left-color: #f3b247;
+}
+.toastNotification.notification_warning .notification_icon {
+  background: #f3b247;
+}
+.toastNotification.notification_warning .notification_icon ion-icon {
+  color: #f5e8d3;
+}
+.toastNotification.notification_error {
+  border-left-color: #ffe6df;
+}
+.toastNotification.notification_error .notification_icon {
+  background: #ffe6df;
+}
+.toastNotification.notification_error .notification_icon ion-icon {
+  color: #f98669;
+}
+.toastNotification.notification_info {
+  border-left-color: #dfedfb;
+}
+.toastNotification.notification_info .notification_icon {
+  background: #dfedfb;
+}
+.toastNotification.notification_info .notification_icon ion-icon {
+  color: #67a9e4;
+}
 .toastNotification .notification_icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #d9eed9;
+  background: grey;
   width: 3rem;
   height: 3rem;
   border-radius: 25px;
 }
 .toastNotification .notification_icon ion-icon {
   font-size: 1.5rem;
-  color: #208625;
+  color: black;
 }
 .toastNotification .notification_text {
   display: flex;

@@ -5,7 +5,7 @@
 	gap: 1rem;
 	padding: 1rem; margin: 1rem;
 
-	border-left: 5px #d9eed9 solid;
+	border-left: 5px grey solid;
 
 	background: white; color: black;
 	width: 425px; height: auto;
@@ -16,12 +16,28 @@
 	box-sizing: border-box;
 
 	// Success Colours
-	$main-colour: #208625;
-	$secondary-colour: #d9eed9;
+	&.notification_success {
+		border-left-color: #d9eed9;
+		.notification_icon { background: #d9eed9; ion-icon { color: #208625; } }
+	}
 
 	// Warning Colours
-	//$main-colour: #f5e8d3;
-	//$secondary-colour: #f3b247;
+	&.notification_warning {
+		border-left-color: #f3b247;
+		.notification_icon { background: #f3b247; ion-icon { color: #f5e8d3; } }
+	}
+
+	// Error Colours
+	&.notification_error {
+		border-left-color: #ffe6df;
+		.notification_icon { background: #ffe6df; ion-icon { color: #f98669; } }
+	}
+
+	// Info Colours
+	&.notification_info {
+		border-left-color: #dfedfb;
+		.notification_icon { background: #dfedfb; ion-icon { color: #67a9e4; } }
+	}
 
 
 	.notification_icon {
@@ -29,11 +45,11 @@
 		display: flex;
 		align-items: center; justify-content: center;
 
-		background: $secondary-colour;
+		background: grey;
 		width: 3rem; height: 3rem;
 		border-radius: 25px;
 
-		ion-icon { font-size: 1.5rem; color: $main-colour; }
+		ion-icon { font-size: 1.5rem; color: black }
 	}
 
 	.notification_text {
