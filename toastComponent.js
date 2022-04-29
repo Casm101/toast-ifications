@@ -34,7 +34,7 @@ class ToastNotification {
     getHtml() {
 
         return `
-			<div class="toastNotification notification_success">
+			<div class="toastNotification notification_info">
 
 				<div class="notification_icon">
 					<ion-icon name="bicycle"></ion-icon>
@@ -56,5 +56,5 @@ class ToastNotification {
 }
 
 
-//componentRender_append(new ToastNotification(filterBarObj).getHtml(), '.tempTester');
-document.querySelector('.tempTester').classList.remove('hidden');
+//componentRender_append(new ToastNotification(toastSampleObj).getHtml(), 'body');
+document.querySelector('html').insertAdjacentHTML('beforeend', new ToastNotification(toastSampleObj).getHtml());
