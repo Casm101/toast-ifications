@@ -1,7 +1,7 @@
 /************************
- CorzzoFit v2 by Marweblous.
+ Toast-ifications (toast notification component library).
 
- CorzzoFit v2.0
+ Toast-ifications v1.0
  Created: 25-04-2022
 
  Toast component.
@@ -10,18 +10,19 @@
 
 // Sample object to use || feel free to copy and paste
 let toastSampleObj = {
-    notificationType: 		'warning',
+    notificationType: 		'error',
 	notificationAction:		'none',
 	title:					'Workout Completed!',
 	message:				'You have Successfully completed your workout, congrats! Keep up the good work!',
 	messageExtended:		false,
 	theme:					'dark',
-	time:					'2022-05-04 0:35:00',
+	time:					'2022-02-04 0:35:00',
 	icon:					'notifications-outline',
-	animated:				true
+	animated:				true,
+	autodelete:				false
 };
 
-// Declaration of filter bar component, render with care ♥
+// Declaration of toast notification component, render with care ♥
 class ToastNotification {
 
     constructor(paramsObj) {
@@ -35,13 +36,13 @@ class ToastNotification {
 		this.time				= new Date(paramsObj.time)	 	|| new Date();
 		this.icon				= paramsObj.icon				|| 'bicycle';
 		this.animated			= paramsObj.animated			|| false;
+		this.autodelete			= paramsObj.autodelete			|| false;
     }
 
 	timeSinceNotification() {
 
-		const notificationTime = this.time;
 		const currentTime = new Date();
-		const timeDiff = currentTime - notificationTime;
+		const timeDiff = currentTime - this.time;
 
 		const minutesDiff = Math.floor(timeDiff / 1000 / 60);
 		const hoursDiff = Math.floor(timeDiff / 1000 / 60 / 60);
@@ -81,10 +82,16 @@ class ToastNotification {
 		if (!this.animated) return 'animations-dissabled';
 	}
 
+	autoDelete() {
+
+		if (this.autodelete) return `auto-delete="${this.autodelete}"`;
+		return '';
+	}
+
     getHtml() {
 
         return `
-			<div class="toastNotification notification_${this.notificationType} ${this.enableAnimations()}">
+			<div class="toastNotification notification_${this.notificationType} ${this.enableAnimations()}" ${this.autoDelete()}>
 
 				<div class="notification_icon">
 					<ion-icon name="${this.icon}"></ion-icon>
@@ -100,10 +107,29 @@ class ToastNotification {
 					<ion-icon name="close" onclick="this.closest('.toastNotification').remove()"></ion-icon>
 				</div>
 
+				<div class="notification_timeout"></div>
 			</div>
         `;
     }
 }
 
+
+// Check for the creation of a toast notification
+const observer = new MutationObserver((change) => {
+
+  change[0].addedNodes.forEach( newNode => {
+
+	  if (newNode.tagName == 'DIV' && newNode.classList.contains('toastNotification') && newNode.getAttribute('auto-delete')) {
+
+		  console.log(newNode);
+		  newNode.querySelector('.notification_timeout').style = `animation: ${newNode.getAttribute('auto-delete')/1000}s ease-in reduceWidth`;
+		  setTimeout( () => {
+			  newNode.closest('.toastNotification').outerHTML = '';
+		  }, newNode.getAttribute('auto-delete'));
+	  }
+  });
+});
+
+observer.observe(document.querySelector('html'), {attributes: true, childList: true, subtree: true,});
 
 document.querySelector('html').insertAdjacentHTML('beforeend', new ToastNotification(toastSampleObj).getHtml());

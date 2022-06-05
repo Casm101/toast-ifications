@@ -5,6 +5,7 @@
   gap: 1rem;
   padding: 1rem;
   margin: 1rem;
+  position: relative;
   border-left: 5px grey solid;
   background: white;
   color: black;
@@ -14,6 +15,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .toastNotification.notification_success {
   border-left-color: #d9eed9;
@@ -24,6 +26,10 @@
 .toastNotification.notification_success .notification_icon ion-icon {
   color: #208625;
 }
+.toastNotification.notification_success .notification_timeout {
+  background: #d9eed9;
+  opacity: 0.3;
+}
 .toastNotification.notification_warning {
   border-left-color: #f3b247;
 }
@@ -32,6 +38,10 @@
 }
 .toastNotification.notification_warning .notification_icon ion-icon {
   color: #f5e8d3;
+}
+.toastNotification.notification_warning .notification_timeout {
+  background: #f3b247;
+  opacity: 0.3;
 }
 .toastNotification.notification_error {
   border-left-color: #ffe6df;
@@ -42,6 +52,10 @@
 .toastNotification.notification_error .notification_icon ion-icon {
   color: #f98669;
 }
+.toastNotification.notification_error .notification_timeout {
+  background: #ffe6df;
+  opacity: 0.3;
+}
 .toastNotification.notification_info {
   border-left-color: #dfedfb;
 }
@@ -50,6 +64,10 @@
 }
 .toastNotification.notification_info .notification_icon ion-icon {
   color: #67a9e4;
+}
+.toastNotification.notification_info .notification_timeout {
+  background: #dfedfb;
+  opacity: 0.3;
 }
 @keyframes notification-shake {
   5% {
@@ -82,6 +100,7 @@
   width: 3rem;
   height: 3rem;
   border-radius: 25px;
+  z-index: 1;
 }
 .toastNotification .notification_icon ion-icon {
   font-size: 1.5rem;
@@ -92,6 +111,7 @@
   flex-direction: column;
   align-items: flex-start;
   width: 70%;
+  z-index: 1;
 }
 .toastNotification .notification_text .text_title {
   font-weight: bold;
@@ -120,6 +140,7 @@
   height: 2rem;
   border-radius: 25px;
   margin-top: 0.5rem;
+  z-index: 1;
   cursor: pointer;
 }
 .toastNotification .notification_close ion-icon {
@@ -129,8 +150,25 @@
 .toastNotification .notification_close:hover {
   opacity: 0.8;
 }
+.toastNotification .notification_timeout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: red;
+  z-index: 0;
+}
 .toastNotification:hover .text_message {
   white-space: normal;
+}
+
+@keyframes reduceWidth {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }
 
 /*# sourceMappingURL=toastStyle.css.map */
