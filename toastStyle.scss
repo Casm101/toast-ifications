@@ -39,6 +39,21 @@
 		.notification_icon { background: #dfedfb; ion-icon { color: #67a9e4; } }
 	}
 
+	// Animations 
+	&.animations-enabled {
+
+		@keyframes notification-shake {
+			5% { transform: rotate(15deg);	}
+			10% { transform: rotate(-15deg);}
+			15% { transform: rotate(15deg);	}
+			20% { transform: rotate(-7deg);	}
+			25% { transform: rotate(5deg);	}
+			30% { transform: rotate(0deg);	}
+		}
+
+		.notification_icon { animation: notification-shake 2s infinite; }
+	}
+
 
 	.notification_icon {
 

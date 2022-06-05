@@ -75,12 +75,16 @@ class ToastNotification {
 		}
 	}
 
-	
+	enableAnimations() {
+
+		if (this.animated) return 'animations-enabled';
+		if (!this.animated) return 'animations-dissabled';
+	}
 
     getHtml() {
 
         return `
-			<div class="toastNotification notification_${this.notificationType}">
+			<div class="toastNotification notification_${this.notificationType} ${this.enableAnimations()}">
 
 				<div class="notification_icon">
 					<ion-icon name="${this.icon}"></ion-icon>
