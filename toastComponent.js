@@ -16,8 +16,8 @@ let toastSampleObj = {
 	message:				'You have Successfully completed your workout, congrats! Keep up the good work!',
 	messageExtended:		false,
 	theme:					'dark',
-	time:					'2022-02-04 0:35:00',
-	icon:					'notifications-outline',
+	time:					'2022-06-04 0:35:00',
+	icon:					'hammer-outline',
 	animated:				true,
 	autodelete:				false
 };
@@ -34,7 +34,7 @@ class ToastNotification {
 		this.messageExtended	= paramsObj.messageExtended		|| false;
 		this.theme				= paramsObj.theme				|| 'light';
 		this.time				= new Date(paramsObj.time)	 	|| new Date();
-		this.icon				= paramsObj.icon				|| 'bicycle';
+		this.icon				= paramsObj.icon				|| 'default';
 		this.animated			= paramsObj.animated			|| false;
 		this.autodelete			= paramsObj.autodelete			|| false;
     }
@@ -76,6 +76,19 @@ class ToastNotification {
 		}
 	}
 
+	iconSetter() {
+
+		if (this.icon != 'default') return this.icon;
+
+		switch (this.notificationType) {
+			case 'success': return 'checkmark-outline';
+			case 'warning':	return 'warning-outline';
+			case 'error':	return 'alert-outline';
+			case 'info':	return 'information-circle-outline';
+			default: 		return 'information-circle-outline';
+		}
+	}
+
 	enableAnimations() {
 
 		if (this.animated) return 'animations-enabled';
@@ -94,7 +107,7 @@ class ToastNotification {
 			<div class="toastNotification notification_${this.notificationType} ${this.enableAnimations()}" ${this.autoDelete()}>
 
 				<div class="notification_icon">
-					<ion-icon name="${this.icon}"></ion-icon>
+					<ion-icon name="${this.iconSetter()}"></ion-icon>
 				</div>
 
 				<div class="notification_text">
@@ -111,23 +124,25 @@ class ToastNotification {
 			</div>
         `;
     }
+
+
+	render() { document.querySelector('html').insertAdjacentHTML('beforeend', new ToastNotification(toastSampleObj).getHtml()); }
 }
 
 
 // Check for the creation of a toast notification
 const observer = new MutationObserver((change) => {
 
-  change[0].addedNodes.forEach( newNode => {
+	change[0].addedNodes.forEach( newNode => {
 
-	  if (newNode.tagName == 'DIV' && newNode.classList.contains('toastNotification') && newNode.getAttribute('auto-delete')) {
+	  	if (newNode.tagName == 'DIV' && newNode.classList.contains('toastNotification') && newNode.getAttribute('auto-delete')) {
 
-		  console.log(newNode);
-		  newNode.querySelector('.notification_timeout').style = `animation: ${newNode.getAttribute('auto-delete')/1000}s ease-in reduceWidth`;
-		  setTimeout( () => {
-			  newNode.closest('.toastNotification').outerHTML = '';
-		  }, newNode.getAttribute('auto-delete'));
-	  }
-  });
+		  	newNode.querySelector('.notification_timeout').style = `animation: ${newNode.getAttribute('auto-delete')/1000}s ease-in reduceWidth`;
+		  	setTimeout( () => {
+			  	newNode.closest('.toastNotification').outerHTML = '';
+		  	}, newNode.getAttribute('auto-delete'));
+	  	}
+	});
 });
 
 observer.observe(document.querySelector('html'), {attributes: true, childList: true, subtree: true,});
