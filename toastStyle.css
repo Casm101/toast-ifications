@@ -28,7 +28,7 @@
 }
 .toastNotification.notification_success .notification_timeout {
   background: #d9eed9;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .toastNotification.notification_warning {
   border-left-color: #f3b247;
@@ -41,7 +41,7 @@
 }
 .toastNotification.notification_warning .notification_timeout {
   background: #f3b247;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .toastNotification.notification_error {
   border-left-color: #ffe6df;
@@ -54,7 +54,7 @@
 }
 .toastNotification.notification_error .notification_timeout {
   background: #ffe6df;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .toastNotification.notification_info {
   border-left-color: #dfedfb;
@@ -67,7 +67,7 @@
 }
 .toastNotification.notification_info .notification_timeout {
   background: #dfedfb;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 @keyframes notification-shake {
   5% {

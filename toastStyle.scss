@@ -23,28 +23,28 @@
 	&.notification_success {
 		border-left-color: #d9eed9;
 		.notification_icon { background: #d9eed9; ion-icon { color: #208625; } }
-		.notification_timeout { background: #d9eed9; opacity: .3; }
+		.notification_timeout { background: #d9eed9; opacity: .5; }
 	}
 
 	// Warning Colours
 	&.notification_warning {
 		border-left-color: #f3b247;
 		.notification_icon { background: #f3b247; ion-icon { color: #f5e8d3; } }
-		.notification_timeout { background: #f3b247; opacity: .3; }
+		.notification_timeout { background: #f3b247; opacity: .5; }
 	}
 
 	// Error Colours
 	&.notification_error {
 		border-left-color: #ffe6df;
 		.notification_icon { background: #ffe6df; ion-icon { color: #f98669; } }
-		.notification_timeout { background: #ffe6df; opacity: .3;}
+		.notification_timeout { background: #ffe6df; opacity: .5;}
 	}
 
 	// Info Colours
 	&.notification_info {
 		border-left-color: #dfedfb;
 		.notification_icon { background: #dfedfb; ion-icon { color: #67a9e4; } }
-		.notification_timeout { background: #dfedfb; opacity: .3; }
+		.notification_timeout { background: #dfedfb; opacity: .5; }
 	}
 
 	// Animations
