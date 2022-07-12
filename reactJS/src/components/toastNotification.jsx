@@ -22,15 +22,13 @@ class ToastNotification extends React.Component {
 		this.icon				= props.notificationData.icon				|| 'default';
 		this.animated			= props.notificationData.animated			|| false;
 		this.autodelete			= props.notificationData.autodelete			|| false;
-		this.state.render 		= true;
+		this.state.shouldRender = true;
 
 		this.notificationClassName = `toastNotification notification_${this.notificationType}`;
     }
 
 	// Declaration of init state
-	state = {
-		render: true,
-	};
+	state = { shouldRender: true };
 
 	// Calculate passed time since notification creation
 	timeSinceNotification() {
@@ -75,7 +73,7 @@ class ToastNotification extends React.Component {
 
 		if (this.icon != 'default') return this.icon;
 
-		switch (notificationType) {
+		switch (this.notificationType) {
 			case 'success': return 'checkmark-outline';
 			case 'warning':	return 'warning-outline';
 			case 'error':	return 'alert-outline';
@@ -91,7 +89,7 @@ class ToastNotification extends React.Component {
 		if (!this.animated) 	return 'dissabled';
 	}
 
-	deleteElement() { this.setState({ render: false }); }
+	deleteElement() { this.setState({ shouldRender: false }); }
 
 	// Set timeout 'till component self-destruct
 	componentDidMount() {
@@ -107,7 +105,7 @@ class ToastNotification extends React.Component {
 	// Return completed component
 	render () {
 
-    	if (this.state.render === false) return null;
+    	if (this.state.shouldRender === false) return null;
 
 		return <div className={this.notificationClassName} animations={this.enableAnimations()}>
 			<div className="notification_icon">

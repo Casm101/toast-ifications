@@ -4,16 +4,16 @@ import ToastNotification from './components/toastNotification';
 
 // Sample object to use || feel free to copy and paste
 let toastSampleObj = {
-    notificationType: 		'error',
+    notificationType: 		'success',
 	notificationAction:		'none',
 	title:					'Workout Completed!',
 	message:				'You have Successfully completed your workout, congrats! Keep up the good work!',
 	messageExtended:		false,
 	theme:					'dark',
 	time:					'2022-06-04 0:35:00',
-	icon:					'hammer-outline',
+	icon:					'default',
 	animated:				true,
-	autodelete:				10
+	autodelete:				false
 };
 
 function Playground() {
