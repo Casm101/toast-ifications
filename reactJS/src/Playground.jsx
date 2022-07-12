@@ -23,6 +23,12 @@ function Playground() {
 
 			<ToastNotification notificationData={toastSampleObj} />
 
+			<ToastNotification notificationData={{notificationType: 'warning'}} />
+
+			<ToastNotification notificationData={{notificationType: 'error', animated: true}} />
+
+			<ToastNotification notificationData={{notificationType: 'info'}} />
+
 		</div>
 	)
 };

@@ -28,9 +28,9 @@
 
 	// Warning Colours
 	&.notification_warning {
-		border-left-color: #f3b247;
-		.notification_icon { background: #f3b247; ion-icon { color: #f5e8d3; } }
-		.notification_timeout { background: #f3b247; opacity: .5; }
+		border-left-color: #f8cc90;
+		.notification_icon { background: #f8cc90; ion-icon { color: orange; } }
+		.notification_timeout { background: #f8cc90; opacity: .5; }
 	}
 
 	// Error Colours

@@ -31,16 +31,16 @@
   opacity: 0.5;
 }
 .toastNotification.notification_warning {
-  border-left-color: #f3b247;
+  border-left-color: #f8cc90;
 }
 .toastNotification.notification_warning .notification_icon {
-  background: #f3b247;
+  background: #f8cc90;
 }
 .toastNotification.notification_warning .notification_icon ion-icon {
-  color: #f5e8d3;
+  color: orange;
 }
 .toastNotification.notification_warning .notification_timeout {
-  background: #f3b247;
+  background: #f8cc90;
   opacity: 0.5;
 }
 .toastNotification.notification_error {
@@ -89,7 +89,7 @@
     transform: rotate(0deg);
   }
 }
-.toastNotification.animations-enabled .notification_icon {
+.toastNotification[animations=enabled] .notification_icon {
   animation: notification-shake 2s infinite;
 }
 .toastNotification .notification_icon {

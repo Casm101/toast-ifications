@@ -3,17 +3,23 @@
 
 ## Table of Contents
 
-* [About the Project](./readme.md/#about-the-project)
-  * [Built With](./readme.md/#built-with)
-* [Getting Started](./readme.md/#getting-started)
-  * [Vanilla Javascript](./readme.md/#vanillajs)
-  * [ReactJS](./readme.md/#reactjs)
-* [Option Examples](./readme.md/#option-examples)
-* [Roadmap](./readme.md/#roadmap)
-* [Author](./readme.md/#author)
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Vanilla Javascript](#🍦-vanilla-js)
+  * [ReactJS](#⚛️-react-js)
+* [Option Examples](#option-examples)
+* [Roadmap](#roadmap)
+* [Author](#author)
+
+
 
 ## About the project
-Toastifications is a toast notification component library, for create simple and elegant notifications for your web based site or application.
+Toastifications is a toast notification component library, for creating simple and elegant notifications for your web based site or application.
+
+![Screenshot](https://i.postimg.cc/fLsG17yn/Screenshot-2022-07-12-at-11-12-56.png)
+
+
 
 ### Tech Stack
 
@@ -28,7 +34,6 @@ Toastifications is a toast notification component library, for create simple and
 Toastifications is currently available for VanillaJS and ReactJS, more framework support is coming soon! To get started find your corresponding framework below:
 
 ### 🍦 Vanilla JS
-
 #### Installation
 
 Install toast-ifications by linking the script and style files in your project.
@@ -48,7 +53,6 @@ new ToastNotification({notificationType: 'info', message: 'Hello World'}).render
 
 
 ### ⚛️ React JS
-
 #### Installation
 
 Install toast-ifications by importing the component file into your project.
@@ -64,6 +68,8 @@ To get started you need to init the `ToastNotification` class and set some optio
 ```javascript
 <ToastNotification notificationData={{notificationType: 'info', message: 'Hello World'}} />
 ```
+
+
 
 ## Option examples
 
@@ -111,7 +117,9 @@ These paramaters set custom visual data on the notification component.
 | `icon`   		   	   | `string` | Set an icon from the ionic icon library.|
 
 
+
 ## Roadmap
+<a id="roadmap"></a>
 
 Upcoming or planned functions and features to the library.
 
@@ -120,6 +128,7 @@ Upcoming or planned functions and features to the library.
 - Angular and Vue support
 
 - Better documentation
+
 
 
 ## Author
