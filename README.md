@@ -1,9 +1,35 @@
-
 # 🍞 Toast-ifications
 
-Toastifications is a Vanilla JS (expanding to your favorite frameworks soon!), toast notification style library, for create simple and elegant notifications for your web based site or application.
 
-## Installation
+## Table of Contents
+
+* [About the Project](./readme.md/#about-the-project)
+  * [Built With](./readme.md/#built-with)
+* [Getting Started](./readme.md/#getting-started)
+  * [Vanilla Javascript](./readme.md/#vanillajs)
+  * [ReactJS](./readme.md/#reactjs)
+* [Option Examples](./readme.md/#option-examples)
+* [Roadmap](./readme.md/#roadmap)
+* [Author](./readme.md/#author)
+
+## About the project
+Toastifications is a toast notification component library, for create simple and elegant notifications for your web based site or application.
+
+### Tech Stack
+
+**VanillaJS:** Vanilla JS, SCSS (CSS preprocessor), HTML
+
+**ReactJS:** React.JS, Vite (dev testing), SCSS (CSS preprocessor), HTML
+
+
+
+## GettingStarted
+
+Toastifications is currently availible for VanillaJS and ReactJS, more framework supposrt is comming soon! To get started find your corresponding framework below:
+
+### 🍦 Vanilla JS
+
+#### Installation
 
 Install toast-ifications by linking the script and style files in your project.
 
@@ -12,7 +38,7 @@ Install toast-ifications by linking the script and style files in your project.
 <link rel="stylesheet" href="./toastStyle.css">
 ```
 
-## Usage
+#### Usage
 
 To get started you need to init the `ToastNotification` class and set some options.
 
@@ -20,6 +46,24 @@ To get started you need to init the `ToastNotification` class and set some optio
 new ToastNotification({notificationType: 'info', message: 'Hello World'}).render();
 ```
 
+
+### ⚛️ React JS
+
+#### Installation
+
+Install toast-ifications by importing the componet file into your project.
+
+```javascript
+import ToastNotification from './components/toastNotification';
+```
+
+#### Usage
+
+To get started you need to init the `ToastNotification` class and set some options.
+
+```javascript
+<ToastNotification notificationData={{notificationType: 'info', message: 'Hello World'}}/>
+```
 
 ## Option examples
 
@@ -41,6 +85,14 @@ The rest of the options, if not set, are set to default values.
 	autodelete:				false
 }
 ```
+
+## Roadmap
+
+- Improved responsive design
+
+- Angular and Vue support
+
+- Better documentation
 
 
 ## Author
