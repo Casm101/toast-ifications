@@ -12,16 +12,16 @@ class ToastNotification extends React.Component {
 
 		super(props);
 
-        this.notificationType 	= props.notificationData.notificationType	|| 'info';
-		this.notificationAction	= props.notificationData.notificationAction	|| 'none';
-		this.title 				= props.notificationData.title				|| 'Something happened';
-		this.message 			= props.notificationData.message			|| `Here's some more specific information on what happened`;
-		this.messageExtended	= props.notificationData.messageExtended	|| false;
-		this.theme				= props.notificationData.theme				|| 'light';
-		this.time				= new Date(props.notificationData.time)	 	|| new Date();
-		this.icon				= props.notificationData.icon				|| 'default';
-		this.animated			= props.notificationData.animated			|| false;
-		this.autodelete			= props.notificationData.autodelete			|| false;
+        this.notificationType 	= props.notificationData?.notificationType		?? 'info';
+		this.notificationAction	= props.notificationData?.notificationAction	?? 'none';
+		this.title 				= props.notificationData?.title					?? 'Something happened';
+		this.message 			= props.notificationData?.message				?? `Here's some more specific information on what happened`;
+		this.messageExtended	= props.notificationData?.messageExtended		?? false;
+		this.theme				= props.notificationData?.theme					?? 'light';
+		this.time				= new Date(props.notificationData?.time)	 	?? new Date();
+		this.icon				= props.notificationData?.icon					?? 'default';
+		this.animated			= props.notificationData?.animated				?? false;
+		this.autodelete			= props.notificationData?.autodelete			?? false;
 		this.state.shouldRender = true;
 
 		this.notificationClassName = `toastNotification notification_${this.notificationType}`;
