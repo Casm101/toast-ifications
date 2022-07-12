@@ -17,15 +17,15 @@ Toastifications is a toast notification component library, for create simple and
 
 ### Tech Stack
 
-**VanillaJS:** Vanilla JS, SCSS (CSS preprocessor), HTML
+**VanillaJS:** Vanilla JS, SCSS (CSS pre-complied), HTML
 
-**ReactJS:** React.JS, Vite (dev testing), SCSS (CSS preprocessor), HTML
+**ReactJS:** React.JS, Vite (dev testing), SCSS, HTML
 
 
 
 ## GettingStarted
 
-Toastifications is currently availible for VanillaJS and ReactJS, more framework supposrt is comming soon! To get started find your corresponding framework below:
+Toastifications is currently available for VanillaJS and ReactJS, more framework support is coming soon! To get started find your corresponding framework below:
 
 ### 🍦 Vanilla JS
 
@@ -51,7 +51,7 @@ new ToastNotification({notificationType: 'info', message: 'Hello World'}).render
 
 #### Installation
 
-Install toast-ifications by importing the componet file into your project.
+Install toast-ifications by importing the component file into your project.
 
 ```javascript
 import ToastNotification from './components/toastNotification';
@@ -62,20 +62,20 @@ import ToastNotification from './components/toastNotification';
 To get started you need to init the `ToastNotification` class and set some options.
 
 ```javascript
-<ToastNotification notificationData={{notificationType: 'info', message: 'Hello World'}}/>
+<ToastNotification notificationData={{notificationType: 'info', message: 'Hello World'}} />
 ```
 
 ## Option examples
 
-Here is an exaple object to render a personalised component, none of the options are stctly required, but i do reccomend at least setting the `notificationType` and `message`.
+Here is an example object to render a personalised component, none of the options are strictly required, but I do recommend at least setting the `notificationType` and `message`.
 
-The rest of the options, if not set, are set to default values.
+The rest of the options, if not set, are set to `default` values.
 
 ```javascript
 {
-    notificationType: 		'error',
-	notificationAction:		'none',
-	title:					'Workout Completed!',
+	notificationType:		'error',
+	notificationAction:	  	'none',
+	title:				 	'Workout Completed!',
 	message:				'You have Successfully completed your workout, congrats! Keep up the good work!',
 	messageExtended:		false,
 	theme:					'dark',
@@ -86,7 +86,34 @@ The rest of the options, if not set, are set to default values.
 }
 ```
 
+#### Notification functionality parameters
+
+These parameters affect the base appearance and functionality of the component.
+
+| Parameter 		   	| Type     | Description                				|
+| :------------------- 	| :------- | :----------------------------------------- |
+| `notificationType`   	| `string` | Sets the type toast notification. 			|
+| `notificationAction` 	| `string` | **Not-functional** Set onClick function of notification. 				|
+| `theme` 			   	| `string` | **Not-functional** Set light or dark-mode.	|
+| `animated` 			| `bool`   | Animates the icon of the notification.		|
+| `autodelete` 			| `bool` `int`   | Deletes the component after setTimeout.	|
+
+#### Custom notification variables
+
+These paramaters set custom visual data on the notification component.
+
+| Parameter 		   | Type     | Description                				|
+| :------------------- | :------- | :-------------------------------------- |
+| `title`   		   | `string` | Set the title of notification component.|
+| `message`   		   | `string` | Set the message to display in notification. |
+| `messageExtended`    | `bool`   | Set the message to display in notification. |
+| `time`   		   	   | `date`   | Set the time the notification was created. |
+| `icon`   		   	   | `string` | Set an icon from the ionic icon library.|
+
+
 ## Roadmap
+
+Upcoming or planned functions and features to the library.
 
 - Improved responsive design
 
